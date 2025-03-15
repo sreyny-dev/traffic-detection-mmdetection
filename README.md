@@ -1,6 +1,6 @@
-# traffic-detection-mmdetection
+# Using mmdection for traffic scense detectoion (Graduation Thesis)
 
-# MMDetection Commands
+## MMDetection Commands
 
 ## Verify Installed Versions and CUDA Availability
 
@@ -10,10 +10,11 @@ Run the following commands to check your installed versions:
 import torch
 import mmcv
 
-print(torch.__version__)       # Should print 2.0.1+cu118
-print(torch.version.cuda)      # Should print 11.8
-print(mmcv.__version__)        # Should print 2.0.1
-print(torch.cuda.is_available())  # Should print True
+print("Python Version:", "3.8.20")
+print("Torch Version:", torch.__version__)       # Should print 2.0.1+cu118
+print("CUDA Version:", torch.version.cuda)      # Should print 11.8
+print("MMCV Version:", mmcv.__version__)        # Should print 2.0.1
+print("CUDA Available:", torch.cuda.is_available())  # Should print True
 ```
 
 ## Running Image Inference
@@ -41,9 +42,18 @@ python demo/image_demo.py demo/image-small-vit.png projects/ViTDet/configs/vitde
 --weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e-small/iter_500.pth --device cuda
 ```
 
-## Training the ViTDet Model
+## Training with a Custom Dataset using ViTDet Model
 
-To start training using the ViTDet model configuration:
+### Steps to Prepare the Dataset
+1. Create a directory named `data` under the `mmdetection` directory.
+2. Inside `data`, place the COCO dataset structure:
+   - `train2017/`
+   - `val2017/`
+   - `annotations/`
+3. Download the `mae_pretrain_vit_base.pth` file and place the this checkpoint in `vitdet_mask-rcnn_vit-b-mae_lsj-100e.py` in the configuration file.
+
+### Train the Model
+Use the following command to train the model with the custom dataset:
 
 ```sh
 python tools/train.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py
@@ -55,4 +65,8 @@ To infer an image using a trained model at a specific iteration:
 
 ```sh
 python demo/image_demo.py demo/image.png projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py \
---weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_18437.pth --device cuda
+--weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_10000.pth --device cuda
+```
+
+
+
