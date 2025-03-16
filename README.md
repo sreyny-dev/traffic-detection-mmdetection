@@ -69,4 +69,14 @@ python demo/image_demo.py demo/image.png projects/ViTDet/configs/vitdet_mask-rcn
 ```
 
 
+### Experiement Result
+### Experiment 1
+config:
+```python
+image_size = (512, 512)
+train_loader: batch_size = 1, number of worker = 2
+val_loader : batch_size =1 , numnber of worker = 2
+```
+![Experiment 1 Result](experiment1.png)
+
 
