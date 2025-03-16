@@ -70,13 +70,33 @@ python demo/image_demo.py demo/image.png projects/ViTDet/configs/vitdet_mask-rcn
 
 
 ### Experiement Result
+### original image
+![demo1](demo/t2.png)
+### demo of official model 
+config:
+```python
+image_size = (1024, 1024)
+train_loader: batch_size = 4, number of worker = 8
+val_loader : batch_size =1 , numnber of worker = 4
+186736 iteration
+```
+![Experiment 1 Result](output/t2-official.png)
+
 ### Experiment 1
 config:
 ```python
 image_size = (512, 512)
 train_loader: batch_size = 1, number of worker = 2
 val_loader : batch_size =1 , numnber of worker = 2
+18736 iteration
 ```
-![Experiment 1 Result](experiment1.png)
-
-
+![Experiment 2 Result](output/t2.png)
+### Experiment 2
+config:
+```python
+image_size = (1024, 1024)
+train_loader: batch_size = 1, number of worker = 4
+val_loader : batch_size =1 , numnber of worker = 2
+10000 iteration
+```
+![Experiment 2 Result](output/t2-e2.png)
