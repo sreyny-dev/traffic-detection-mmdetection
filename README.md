@@ -114,7 +114,7 @@ val_loader : batch_size =1 , numnber of worker = 2
 ```
 
 
-## Bounding Box (bbox) Metrics
+#### Bounding Box (bbox) Metrics
 
 | Metric                 | Value |
 |------------------------|-------|
@@ -125,7 +125,7 @@ val_loader : batch_size =1 , numnber of worker = 2
 | **mAP@[IoU=0.50:0.95] (medium)** | 0.342 |
 | **mAP@[IoU=0.50:0.95] (large)** | 0.410 |
 
-## Segmentation (segm) Metrics
+#### Segmentation (segm) Metrics
 
 | Metric                 | Value |
 |------------------------|-------|
@@ -136,7 +136,7 @@ val_loader : batch_size =1 , numnber of worker = 2
 | **mAP@[IoU=0.50:0.95] (medium)** | 0.324 |
 | **mAP@[IoU=0.50:0.95] (large)** | 0.441 |
 
-## Recall Metrics
+#### Recall Metrics
 
 | Metric                 | Value |
 |------------------------|-------|
