@@ -33,6 +33,10 @@ To perform inference using the ViTDet model with CUDA:
 ```sh
 python demo/image_demo.py demo/demo.jpg projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py --weights vitdet_mask-rcnn_vit-b-mae_lsj-100e_20230328_153519-e15fe294.pth --device cuda
 ```
+or
+```sh
+(openmmlab) D:\Y4S2\Thesis\mmdetection>python demo/image_demo.py demo/data/demo.jpg projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py --weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_100000.pth --device cuda
+```
 
 To infer an image using a fine-tuned ViTDet model:
 
