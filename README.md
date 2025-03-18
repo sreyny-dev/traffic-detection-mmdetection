@@ -147,3 +147,4 @@ val_loader : batch_size =1 , numnber of worker = 2
 | **AR@[IoU=0.50:0.95] (medium, maxDets=1000)** | 0.516 |
 | **AR@[IoU=0.50:0.95] (large, maxDets=1000)** | 0.610 |
 
+![Experiment 2 Result](output/t2-100000.png)
