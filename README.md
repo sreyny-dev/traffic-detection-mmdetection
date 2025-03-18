@@ -31,15 +31,13 @@ python demo/image_demo.py demo/image.png rtmdet_tiny_8xb32-300e_coco.py \
 To perform inference using the ViTDet model with CUDA:
 
 ```sh
-python demo/image_demo.py demo/demo.jpg projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py \
---weights vitdet_mask-rcnn_vit-b-mae_lsj-100e_20230328_153519-e15fe294.pth --device cuda
+python demo/image_demo.py demo/demo.jpg projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py --weights vitdet_mask-rcnn_vit-b-mae_lsj-100e_20230328_153519-e15fe294.pth --device cuda
 ```
 
 To infer an image using a fine-tuned ViTDet model:
 
 ```sh
-python demo/image_demo.py demo/image-small-vit.png projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py \
---weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e-small/iter_500.pth --device cuda
+python demo/image_demo.py demo/image-small-vit.png projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py --weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e-small/iter_500.pth --device cuda
 ```
 
 ## Training with a Custom Dataset using ViTDet Model
@@ -58,7 +56,12 @@ Use the following command to train the model with the custom dataset:
 ```sh
 python tools/train.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py
 ```
+### Test the Model
+Use the following command to train the model with the custom dataset:
 
+```sh
+python tools/test.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_100000.pth
+```
 ## Running Inference with a Specific Checkpoint
 
 To infer an image using a trained model at a specific iteration:
@@ -100,3 +103,47 @@ val_loader : batch_size =1 , numnber of worker = 2
 10000 iteration
 ```
 ![Experiment 2 Result](output/t2-e2.png)
+### Experiment 3
+#### COCO Evaluation Results
+config:
+```python
+image_size = (1024, 1024)
+train_loader: batch_size = 2, number of worker = 8
+val_loader : batch_size =1 , numnber of worker = 2
+100000 iteration
+```
+
+
+## Bounding Box (bbox) Metrics
+
+| Metric                 | Value |
+|------------------------|-------|
+| **mAP@[IoU=0.50:0.95] (all)** | 0.316 |
+| **mAP@[IoU=0.50] (all)** | 0.505 |
+| **mAP@[IoU=0.75] (all)** | 0.350 |
+| **mAP@[IoU=0.50:0.95] (small)** | 0.188 |
+| **mAP@[IoU=0.50:0.95] (medium)** | 0.342 |
+| **mAP@[IoU=0.50:0.95] (large)** | 0.410 |
+
+## Segmentation (segm) Metrics
+
+| Metric                 | Value |
+|------------------------|-------|
+| **mAP@[IoU=0.50:0.95] (all)** | 0.300 |
+| **mAP@[IoU=0.50] (all)** | 0.486 |
+| **mAP@[IoU=0.75] (all)** | 0.320 |
+| **mAP@[IoU=0.50:0.95] (small)** | 0.137 |
+| **mAP@[IoU=0.50:0.95] (medium)** | 0.324 |
+| **mAP@[IoU=0.50:0.95] (large)** | 0.441 |
+
+## Recall Metrics
+
+| Metric                 | Value |
+|------------------------|-------|
+| **AR@[IoU=0.50:0.95] (all, maxDets=100)** | 0.480 |
+| **AR@[IoU=0.50:0.95] (all, maxDets=300)** | 0.480 |
+| **AR@[IoU=0.50:0.95] (all, maxDets=1000)** | 0.480 |
+| **AR@[IoU=0.50:0.95] (small, maxDets=1000)** | 0.302 |
+| **AR@[IoU=0.50:0.95] (medium, maxDets=1000)** | 0.516 |
+| **AR@[IoU=0.50:0.95] (large, maxDets=1000)** | 0.610 |
+
