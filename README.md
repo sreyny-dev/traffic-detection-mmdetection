@@ -93,39 +93,7 @@ val_loader : batch_size =1 , numnber of worker = 4
 ```
 ![Experiment 1 Result](output/t2-official.png)
 
-### Experiment 1
-config:
-```python
-image_size = (512, 512)
-train_loader: batch_size = 1, number of worker = 2
-val_loader : batch_size =1 , numnber of worker = 2
-18736 iteration
-```
-![Experiment 2 Result](output/t2.png)
-| Metric                            | Area      | maxDets = 100 | maxDets = 1000 | maxDets = 300 | maxDets = 1  |
-|-----------------------------------|-----------|----------------|-----------------|----------------|---------------|
-| Average Precision (AP) [@ IoU=0.50:0.95] | all       | 0.147          | 0.288           | 0.136          | 0.045         |
-| Average Precision (AP) [@ IoU=0.50:0.95] | small     | 0.288          | 0.136           | 0.045          | 0.161         |
-| Average Precision (AP) [@ IoU=0.50:0.95] | medium    | 0.161          | 0.231           | 0.304          | 0.304         |
-| Average Precision (AP) [@ IoU=0.50:0.95] | large     | 0.304          | 0.349           | 0.304          | 0.101         |
-| Average Recall (AR) [@ IoU=0.50:0.95]    | all       | 0.462          | -               | -              | -             |
-| Average Recall (AR) [@ IoU=0.50:0.95]    | small     | 0.136          | 0.045           | 0.161          | -             |
-| Average Recall (AR) [@ IoU=0.50:0.95]    | medium    | 0.231          | 0.147           | -              | -             |
-| Average Recall (AR) [@ IoU=0.50:0.95]    | large     | 0.156          | 0.283           | -              | -             |
-
-Coco Evaluation Results:
-| Metric                    | Value     |
-|---------------------------|-----------|
-| coco/bbox mAP @ .50      | 0.450     |
-| coco/bbox mAP @ .75      | 0.161     |
-| coco/bbox mAP_l          | 0.231     |
-| coco/segm mAP @ .50      | 0.276     |
-| coco/segm mAP @ .75      | 0.157     |
-| coco/segm mAP_l          | 0.283     |
-| data_time                 | 0.0031    |
-| time                      | 0.12      |
-
-### Experiment 3
+### Experiment 1: VIT with Mask RCNN 50 FPN
 #### COCO Evaluation Results
 config:
 ```python
