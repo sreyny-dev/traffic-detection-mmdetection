@@ -69,10 +69,14 @@ python tools/test.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e
 ## Running Inference with a Specific Checkpoint
 
 To infer an image using a trained model at a specific iteration:
-
+### VIT with Mask RCNN
 ```sh
 python demo/image_demo.py demo/image.png projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py \
 --weights work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_10000.pth --device cuda
+```
+### VIT ith Cascade_MAsk-RCNN  head
+```
+python demo/image_demo.py demo/t2-e2.png projects/ViTDet/configs/vitdet_cascade_mask-rcnn_vit-b-mae_lsj-100e.py --weights work_dirs/vitdet_cascade_mask-rcnn_vit-b-mae_lsj-100e/iter_55000.pth --device cuda
 ```
 
 
