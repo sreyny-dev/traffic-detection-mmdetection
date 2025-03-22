@@ -138,3 +138,40 @@ val_loader : batch_size =1 , numnber of worker = 2
 | **AR@[IoU=0.50:0.95] (large, maxDets=1000)** | 0.610 |
 
 ![Experiment 2 Result](output/t2-100000.png)
+
+
+### Experiment 1: VIT with Cascade Mask RCNN 50 FPN
+The custom model was evaluated over 5000 iterations, producing the following COCO metrics:
+
+### Bounding Box Metrics (`bbox`)
+| Metric                  | Value  |
+|-------------------------|--------|
+| mAP @ IoU=0.50:0.95     | 0.292  |
+| mAP @ IoU=0.50          | 0.468  |
+| mAP @ IoU=0.75          | 0.321  |
+| mAP (Small)             | 0.156  |
+| mAP (Medium)            | 0.317  |
+| mAP (Large)             | 0.396  |
+| AR @ IoU=0.50:0.95 (All)| 0.455  |
+| AR (Small)              | 0.268  |
+| AR (Medium)             | 0.492  |
+| AR (Large)              | 0.594  |
+
+### Segmentation Metrics (`segm`)
+| Metric                  | Value  |
+|-------------------------|--------|
+| mAP @ IoU=0.50:0.95     | 0.280  |
+| mAP @ IoU=0.50          | 0.452  |
+| mAP @ IoU=0.75          | 0.301  |
+| mAP (Small)             | 0.116  |
+| mAP (Medium)            | 0.301  |
+| mAP (Large)             | 0.427  |
+| AR @ IoU=0.50:0.95 (All)| 0.428  |
+| AR (Small)              | 0.230  |
+| AR (Medium)             | 0.467  |
+| AR (Large)              | 0.588  |
+
+### Summary of Custom Model
+- **Strengths**: Decent performance on large objects (bbox mAP_l: 0.396, segm mAP_l: 0.427).
+- **Weaknesses**: Struggles with small objects (bbox mAP_s: 0.156, segm mAP_s: 0.116) and precise localization (lower mAP at IoU=0.75).
+
