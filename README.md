@@ -62,10 +62,17 @@ python tools/train.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100
 ```
 ### Test the Model
 Use the following command to train the model with the custom dataset:
+#### ViT with Mask RCNN 
 
 ```sh
 python tools/test.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_100000.pth
 ```
+
+#### Swin with Mask RCNN 
+
+```sh
+python tools/test.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_100000.pth
+
 ## Running Inference with a Specific Checkpoint
 
 To infer an image using a trained model at a specific iteration:
