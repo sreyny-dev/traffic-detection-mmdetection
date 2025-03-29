@@ -78,7 +78,11 @@ python demo/image_demo.py demo/image.png projects/ViTDet/configs/vitdet_mask-rcn
 ```
 python demo/image_demo.py demo/t2-e2.png projects/ViTDet/configs/vitdet_cascade_mask-rcnn_vit-b-mae_lsj-100e.py --weights work_dirs/vitdet_cascade_mask-rcnn_vit-b-mae_lsj-100e/iter_55000.pth --device cuda
 ```
+### Swin Base with Mask R-CNN
 
+```
+python demo/image_demo.py demo/t2-mask.png configs/swin/mask-rcnn_swin-t-p4-w7_fpn_1x_coco.py --weights work_dirs/mask-rcnn_swin-t-p4-w7_fpn_1x_coco/epoch_4.pth --device CPU``
+```
 
 ### Experiement Result
 ### original image
