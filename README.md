@@ -60,7 +60,7 @@ Use the following command to train the model with the custom dataset:
 ```sh
 python tools/train.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py
 ```
-### Test the Model
+## Test the Model
 Use the following command to train the model with the custom dataset:
 #### ViT with Mask RCNN 
 
@@ -68,10 +68,10 @@ Use the following command to train the model with the custom dataset:
 python tools/test.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_100000.pth
 ```
 
-#### Swin with Mask RCNN 
+### Swin with Mask RCNN 
 
 ```sh
-python tools/test.py projects/ViTDet/configs/vitdet_mask-rcnn_vit-b-mae_lsj-100e.py work_dirs/vitdet_mask-rcnn_vit-b-mae_lsj-100e/iter_100000.pth
+python tools/test.py configs/swin/mask-rcnn_swin-t-p4-w7_fpn_1x_coco.py work_dirs/mask-rcnn_swin-t-p4-w7_fpn_1x_coco/epoch_3.pth
 
 ## Running Inference with a Specific Checkpoint
 
@@ -91,7 +91,7 @@ python demo/image_demo.py demo/t2-e2.png projects/ViTDet/configs/vitdet_cascade_
 python demo/image_demo.py demo/t2-mask.png configs/swin/mask-rcnn_swin-t-p4-w7_fpn_1x_coco.py --weights work_dirs/mask-rcnn_swin-t-p4-w7_fpn_1x_coco/epoch_4.pth --device CPU``
 ```
 
-### Experiement Result
+## Experiement Result
 ### original image
 ![demo1](demo/t2.png)
 ### demo of official model 
