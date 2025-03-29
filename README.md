@@ -1,4 +1,4 @@
-# Using mmdection for traffic scense detectoion (Graduation Thesis)
+# Vision Transformer for traffic senses detection (Graduation Thesis)
 
 ## MMDetection Commands
 
